@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>PawCare Pet Grooming</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#ff6b6b;
+--secondary:#ffb84d;
+--light:#fffaf7;
+--dark:#222;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:var(--light);
+overflow-x:hidden;
+}
+
+.section{
+padding:90px 0;
+}
+
+.navbar{
+transition:.4s;
+padding:15px 0;
+}
+
+.navbar.scrolled{
+background:#fff !important;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.navbar-brand{
+font-size:30px;
+font-weight:700;
+}
+
+.btn-main{
+background:linear-gradient(45deg,#ff6b6b,#ff9966);
+color:white;
+padding:13px 34px;
+border:none;
+border-radius:50px;
+font-weight:600;
+transition:.4s;
+}
+
+.btn-main:hover{
+transform:translateY(-3px);
+color:white;
+box-shadow:0 15px 25px rgba(255,107,107,.4);
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('C:/Users/dell/OneDrive/Desktop/html-css-sulav/img/hero.jpg') center/cover;
+color:white;
+}
+
+.hero h1{
+font-size:65px;
+font-weight:800;
+}
+
+.hero p{
+font-size:20px;
+margin:25px 0;
+}
+
+.badge-custom{
+background:#ffd43b;
+color:#222;
+padding:10px 18px;
+border-radius:30px;
+font-size:15px;
+margin-bottom:20px;
+display:inline-block;
+}
+
+.floating{
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-18px);}
+
+100%{transform:translateY(0);}
+
+}
+
+.card{
+border:none;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.card img{
+transition:.5s;
+}
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+.gallery img{
+height:250px;
+width:100%;
+object-fit:cover;
+border-radius:20px;
+transition:.5s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.counter{
+font-size:55px;
+font-weight:700;
+}
+
+footer{
+background:#222;
+color:white;
+padding:50px 0;
+}
+
+#topBtn{
+position:fixed;
+right:20px;
+bottom:20px;
+width:55px;
+height:55px;
+border:none;
+background:#ff6b6b;
+color:white;
+border-radius:50%;
+display:none;
+z-index:999;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+</style>
+
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+
+<a class="navbar-brand text-danger fw-bold" href="#">
+<i class="fa-solid fa-paw"></i> PawCare
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto align-items-lg-center">
+
+<li class="nav-item">
+<a class="nav-link" href="#">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#services">Services</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#about">About</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#gallery">Gallery</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+
+<li class="nav-item ms-lg-3">
+<a class="btn btn-main" href="#contact">
+Book Appointment
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+</nav>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6 text-white" data-aos="fade-right">
+<br><br>
+<div class="badge-custom">
+🐾 Trusted by 500+ Happy Pet Owners
+</div>
+
+<h1>
+Professional Care For Your Best Friend
+</h1>
+
+<p>
+Pamper your beloved pets with premium grooming, luxurious spa treatments,
+healthy skin care, stylish haircuts, and loving professional attention.
+</p>
+
+<div class="mt-4">
+
+<a href="#contact" class="btn btn-main btn-lg me-3">
+Book Now
+</a>
+
+<a href="#services" class="btn btn-outline-light btn-lg">
+Explore Services
+</a>
+
+</div>
+
+<div class="row mt-5">
+
+<div class="col-4">
+
+<h3>500+</h3>
+
+<p>Happy Pets</p>
+
+</div>
+
+<div class="col-4">
+
+<h3>12+</h3>
+
+<p>Years</p>
+
+</div>
+
+<div class="col-4">
+
+<h3>4.9★</h3>
+
+<p>Rating</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-6 text-center" data-aos="fade-left">
+
+<img src="C:/Users/dell/OneDrive/Desktop/html-css-sulav/img/hero.jpg"
+class="img-fluid floating"
+style="max-height:550px;">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Services Section -->
+<section id="services" class="section">
+
+<div class="container">
+
+<div class="text-center mb-5" data-aos="fade-up">
+
+<h6 class="text-danger fw-bold">
+OUR SERVICES
+</h6>
+
+<h2 class="display-5 fw-bold">
+Pampering Pets with Love & Care
+</h2>
+
+<p class="text-muted">
+From luxurious spa treatments to breed-specific styling, we provide everything your furry friend needs to stay clean, healthy, and happy.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<!-- Card 1 -->
+
+<div class="col-lg-4 col-md-6" data-aos="zoom-in">
+
+<div class="card h-100">
+
+<img src="images/service1.jpg" class="card-img-top" alt="Bath & Spa">
+
+<div class="card-body p-4">
+
+<div class="mb-3">
+
+<i class="fa-solid fa-bath fa-2x text-danger"></i>
+
+</div>
+
+<h4 class="fw-bold">
+Bath & Spa
+</h4>
+
+<p class="text-muted">
+A relaxing bath using premium shampoos, coat conditioning, gentle drying, ear cleaning, and refreshing pet perfume.
+</p>
+
+<a href="#contact" class="btn btn-main mt-2">
+Book Service
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Card 2 -->
+
+<div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="150">
+
+<div class="card h-100">
+
+<img src="images/service2.jpg" class="card-img-top" alt="Hair Styling">
+
+<div class="card-body p-4">
+
+<div class="mb-3">
+
+<i class="fa-solid fa-scissors fa-2x text-danger"></i>
+
+</div>
+
+<h4 class="fw-bold">
+Hair Styling
+</h4>
+
+<p class="text-muted">
+Professional breed-specific grooming, stylish trims, coat shaping, and personalized haircuts for every pet.
+</p>
+
+<a href="#contact" class="btn btn-main mt-2">
+Book Service
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Card 3 -->
+
+<div class="col-lg-4 col-md-6 mx-md-auto" data-aos="zoom-in" data-aos-delay="300">
+
+<div class="card h-100">
+
+<img src="images/service3.jpg" class="card-img-top" alt="Nail Care">
+
+<div class="card-body p-4">
+
+<div class="mb-3">
+
+<i class="fa-solid fa-paw fa-2x text-danger"></i>
+
+</div>
+
+<h4 class="fw-bold">
+Nail & Paw Care
+</h4>
+
+<p class="text-muted">
+Safe nail trimming, paw cleaning, moisturizing treatments, and careful handling to keep paws healthy and comfortable.
+</p>
+
+<a href="#contact" class="btn btn-main mt-2">
+Book Service
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- About Section -->
+<section id="about" class="section bg-light">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<!-- Image -->
+
+<div class="col-lg-6" data-aos="fade-right">
+
+<img src="images/about.jpg"
+class="img-fluid rounded-4 shadow-lg"
+alt="About PawCare">
+
+</div>
+
+<!-- Content -->
+
+<div class="col-lg-6" data-aos="fade-left">
+
+<h6 class="text-danger fw-bold">
+ABOUT PAWCARE
+</h6>
+
+<h2 class="display-5 fw-bold mb-4">
+We Treat Every Pet Like Family
+</h2>
+
+<p class="text-muted mb-4">
+At PawCare, we believe every pet deserves the highest level of care. Our experienced groomers provide professional grooming services in a clean, safe, and stress-free environment. Whether it's a simple bath or a full grooming session, we ensure your furry companion leaves looking and feeling their best.
+</p>
+
+<div class="row g-3 mb-4">
+
+<div class="col-md-6">
+
+<div class="d-flex">
+
+<i class="fa-solid fa-circle-check text-danger fa-xl me-3 mt-1"></i>
+
+<div>
+
+<h5 class="fw-bold mb-1">
+Certified Groomers
+</h5>
+
+<p class="text-muted mb-0">
+Experienced professionals who genuinely love animals.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="d-flex">
+
+<i class="fa-solid fa-circle-check text-danger fa-xl me-3 mt-1"></i>
+
+<div>
+
+<h5 class="fw-bold mb-1">
+Premium Products
+</h5>
+
+<p class="text-muted mb-0">
+Gentle shampoos and high-quality grooming supplies.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="d-flex">
+
+<i class="fa-solid fa-circle-check text-danger fa-xl me-3 mt-1"></i>
+
+<div>
+
+<h5 class="fw-bold mb-1">
+Safe Environment
+</h5>
+
+<p class="text-muted mb-0">
+Comfortable, hygienic, and pet-friendly facilities.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="d-flex">
+
+<i class="fa-solid fa-circle-check text-danger fa-xl me-3 mt-1"></i>
+
+<div>
+
+<h5 class="fw-bold mb-1">
+Personalized Care
+</h5>
+
+<p class="text-muted mb-0">
+Every pet receives individual attention and care.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<a href="#contact" class="btn btn-main">
+Book an Appointment
+</a>
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="row text-center mt-5 g-4">
+
+<div class="col-md-3" data-aos="zoom-in">
+
+<div class="bg-white rounded-4 shadow p-4">
+
+<h2 class="counter text-danger">
+500+
+</h2>
+
+<p class="mb-0">
+Happy Pets
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+
+<div class="bg-white rounded-4 shadow p-4">
+
+<h2 class="counter text-danger">
+12+
+</h2>
+
+<p class="mb-0">
+Years Experience
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+
+<div class="bg-white rounded-4 shadow p-4">
+
+<h2 class="counter text-danger">
+18
+</h2>
+
+<p class="mb-0">
+Expert Groomers
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+
+<div class="bg-white rounded-4 shadow p-4">
+
+<h2 class="counter text-danger">
+4.9★
+</h2>
+
+<p class="mb-0">
+Customer Rating
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- Gallery Section -->
+<section id="gallery" class="section">
+
+<div class="container">
+
+<div class="text-center mb-5" data-aos="fade-up">
+
+<h6 class="text-danger fw-bold">
+OUR GALLERY
+</h6>
+
+<h2 class="display-5 fw-bold">
+Happy Pets, Happy Moments
+</h2>
+
+<p class="text-muted">
+Take a look at some of our adorable clients after their grooming sessions.
+</p>
+
+</div>
+
+<div class="row g-4 gallery">
+
+<div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+<div class="card">
+
+<img src="images/gallery1.jpg"
+class="img-fluid"
+alt="Pet Grooming">
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+
+<div class="card">
+
+<img src="images/gallery2.jpg"
+class="img-fluid"
+alt="Dog Grooming">
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+
+<div class="card">
+
+<img src="images/gallery3.jpg"
+class="img-fluid"
+alt="Pet Care">
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+
+<div class="card">
+
+<img src="images/gallery4.jpg"
+class="img-fluid"
+alt="Cute Pet">
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6" data-aos="fade-up">
+
+<div class="card">
+
+<img src="images/gallery5.jpg"
+class="img-fluid"
+alt="Dog Spa">
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+
+<div class="card">
+
+<img src="images/gallery6.jpg"
+class="img-fluid"
+alt="Cat Grooming">
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300">
+
+<div class="card">
+
+<img src="images/gallery7.jpg"
+class="img-fluid"
+alt="Happy Pet">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Image Lightbox Modal -->
+
+<div class="modal fade" id="galleryModal" tabindex="-1">
+
+<div class="modal-dialog modal-dialog-centered modal-lg">
+
+<div class="modal-content border-0 bg-transparent">
+
+<img id="galleryImage"
+class="img-fluid rounded shadow">
+
+</div>
+
+</div>
+
+</div>
+<!-- Contact Section -->
+
+<section id="contact" class="section bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5" data-aos="fade-up">
+
+<h6 class="text-danger fw-bold">
+CONTACT US
+</h6>
+
+<h2 class="display-5 fw-bold">
+Book Your Pet's Appointment
+</h2>
+
+<p class="text-muted">
+We're excited to meet you and your furry friend. Reach out today to schedule a grooming session.
+</p>
+
+</div>
+
+<div class="row g-5">
+
+<!-- Contact Info -->
+
+<div class="col-lg-5" data-aos="fade-right">
+
+<div class="card border-0 shadow-lg rounded-4 p-4 h-100">
+
+<h3 class="fw-bold mb-4">
+Get In Touch
+</h3>
+
+<div class="d-flex mb-4">
+
+<div class="me-3">
+
+<i class="fa-solid fa-location-dot fa-2x text-danger"></i>
+
+</div>
+
+<div>
+
+<h5>Address</h5>
+
+<p class="text-muted mb-0">
+123 Pet Street<br>
+Kathmandu, Nepal
+</p>
+
+</div>
+
+</div>
+
+<div class="d-flex mb-4">
+
+<div class="me-3">
+
+<i class="fa-solid fa-phone fa-2x text-danger"></i>
+
+</div>
+
+<div>
+
+<h5>Phone</h5>
+
+<p class="text-muted mb-0">
++977-98XXXXXXXX
+</p>
+
+</div>
+
+</div>
+
+<div class="d-flex mb-4">
+
+<div class="me-3">
+
+<i class="fa-solid fa-envelope fa-2x text-danger"></i>
+
+</div>
+
+<div>
+
+<h5>Email</h5>
+
+<p class="text-muted mb-0">
+info@pawcare.com
+</p>
+
+</div>
+
+</div>
+
+<div class="d-flex">
+
+<div class="me-3">
+
+<i class="fa-solid fa-clock fa-2x text-danger"></i>
+
+</div>
+
+<div>
+
+<h5>Opening Hours</h5>
+
+<p class="text-muted mb-0">
+
+Monday - Friday : 9:00 AM - 7:00 PM
+
+<br>
+
+Saturday : 9:00 AM - 5:00 PM
+
+<br>
+
+Sunday : Closed
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Contact Form -->
+
+<div class="col-lg-7" data-aos="fade-left">
+
+<div class="card border-0 shadow-lg rounded-4 p-4">
+
+<h3 class="fw-bold mb-4">
+Appointment Form
+</h3>
+
+<form>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<input type="text"
+class="form-control form-control-lg"
+placeholder="Your Name"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<input type="email"
+class="form-control form-control-lg"
+placeholder="Email Address"
+required>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<input type="text"
+class="form-control form-control-lg"
+placeholder="Phone Number">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<select class="form-select form-select-lg">
+
+<option selected>Select Service</option>
+
+<option>Bath & Spa</option>
+
+<option>Hair Styling</option>
+
+<option>Nail Care</option>
+
+<option>Full Grooming</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="mb-3">
+
+<input type="date"
+class="form-control form-control-lg">
+
+</div>
+
+<div class="mb-3">
+
+<textarea
+class="form-control"
+rows="5"
+placeholder="Tell us about your pet..."></textarea>
+
+</div>
+
+<button class="btn btn-main btn-lg w-100">
+
+<i class="fa-solid fa-paper-plane me-2"></i>
+
+Book Appointment
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Google Map -->
+
+<div class="row mt-5">
+
+<div class="col-12" data-aos="zoom-in">
+
+<div class="rounded-4 overflow-hidden shadow">
+
+<iframe
+src="https://www.google.com/maps?q=Kathmandu&output=embed"
+width="100%"
+height="400"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- Footer -->
+
+<footer>
+
+<div class="container">
+
+<div class="row gy-4">
+
+<div class="col-lg-4">
+
+<h3 class="fw-bold">
+<i class="fa-solid fa-paw text-danger"></i>
+PawCare
+</h3>
+
+<p>
+Professional pet grooming with love, care and compassion.
+Your furry friend deserves the very best.
+</p>
+
+</div>
+
+<div class="col-lg-4">
+
+<h4 class="mb-3">
+Quick Links
+</h4>
+
+<ul class="list-unstyled">
+
+<li><a href="#" class="text-decoration-none text-light">Home</a></li>
+
+<li><a href="#services" class="text-decoration-none text-light">Services</a></li>
+
+<li><a href="#about" class="text-decoration-none text-light">About</a></li>
+
+<li><a href="#gallery" class="text-decoration-none text-light">Gallery</a></li>
+
+<li><a href="#contact" class="text-decoration-none text-light">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="col-lg-4">
+
+<h4 class="mb-3">
+Follow Us
+</h4>
+
+<a href="#" class="text-light me-3 fs-3">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#" class="text-light me-3 fs-3">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#" class="text-light me-3 fs-3">
+<i class="fab fa-tiktok"></i>
+</a>
+
+<a href="#" class="text-light fs-3">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+<hr class="border-secondary my-4">
+
+<div class="text-center">
+
+<p class="mb-0">
+
+© 2026 PawCare Pet Grooming. All Rights Reserved.
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- Back To Top -->
+
+<button id="topBtn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- Dark Mode Button -->
+
+<button
+id="darkMode"
+class="btn btn-dark rounded-circle"
+style="position:fixed;left:20px;bottom:20px;width:55px;height:55px;z-index:999;">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<!-- Scripts -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+duration:1000,
+once:true
+});
+
+// Smooth Scroll
+
+$("a[href^='#']").click(function(e){
+
+e.preventDefault();
+
+let target=$($(this).attr("href"));
+
+if(target.length){
+
+$("html,body").animate({
+
+scrollTop:target.offset().top-70
+
+},700);
+
+}
+
+});
+
+// Navbar Scroll Effect
+
+$(window).scroll(function(){
+
+if($(this).scrollTop()>50){
+
+$(".navbar").addClass("scrolled");
+
+}else{
+
+$(".navbar").removeClass("scrolled");
+
+}
+
+});
+
+// Back To Top
+
+$(window).scroll(function(){
+
+if($(this).scrollTop()>300){
+
+$("#topBtn").fadeIn();
+
+}else{
+
+$("#topBtn").fadeOut();
+
+}
+
+});
+
+$("#topBtn").click(function(){
+
+$("html,body").animate({
+
+scrollTop:0
+
+},700);
+
+});
+
+// Gallery Lightbox
+
+document.querySelectorAll(".gallery img").forEach(function(img){
+
+img.addEventListener("click",function(){
+
+document.getElementById("galleryImage").src=this.src;
+
+new bootstrap.Modal(document.getElementById("galleryModal")).show();
+
+});
+
+});
+
+// Dark Mode
+
+$("#darkMode").click(function(){
+
+$("body").toggleClass("bg-dark text-white");
+
+$(".card").toggleClass("bg-dark text-white");
+
+$(".bg-light").toggleClass("bg-dark");
+
+$("footer").toggleClass("bg-black");
+
+});
+
+// Simple Counter Animation
+
+$(".counter").each(function(){
+
+let $this=$(this);
+
+let count=parseInt($this.text());
+
+$this.text("0");
+
+$({Counter:0}).animate({
+
+Counter:count
+
+},{
+
+duration:2000,
+
+easing:'swing',
+
+step:function(){
+
+$this.text(Math.ceil(this.Counter)+"+");
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html></html>
